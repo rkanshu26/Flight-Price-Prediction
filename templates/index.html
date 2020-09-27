@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Flight Price Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Airline" placeholder="Airline" required="required" />
+        <input type="text" name="Source" placeholder="Source" required="required" />
+		<input type="text" name="Destination" placeholder="Destination" required="required" />
+		<input type="text" name="Date" placeholder="Date" required="required" />
+		<input type="text" name="Month" placeholder="Month" required="required" />
+		<input type="text" name="Total_Stops" placeholder="Total_Stops" required="required" />
+		<input type="text" name="Additional_Info" placeholder="Additional_Info" required="required" />
+		<input type="text" name="Arrival_Hour" placeholder="Arrival_Hour" required="required" />
+		<input type="text" name="Arrival_Minute" placeholder="Arrival_Minute" required="required" />
+		<input type="text" name="Departure_Hour" placeholder="Departure_Hour" required="required" />
+		<input type="text" name="Departure_Minute" placeholder="Departure_Minute" required="required" />
+		<input type="text" name="Duration_Hour" placeholder="Duration_Hour" required="required" />
+		<input type="text" name="Duration_Minute" placeholder="Duration_Minute" required="required" />
+		<input type="text" name="Route_1" placeholder="Route_1" required="required" />
+		<input type="text" name="Route_2" placeholder="Route_2" required="required" />
+		<input type="text" name="Route_3" placeholder="Route_3" required="required" />
+		<input type="text" name="Route_4" placeholder="Route_4" required="required" />
+		<input type="text" name="Route_5" placeholder="Route_5" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
